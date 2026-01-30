@@ -736,27 +736,35 @@ body {
         order: 0;
         flex: 0 0 auto;
         width: 140px;
-        height: 48px;
+        height: auto;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         border-radius: 999px; /* oval */
         overflow: hidden;
-        padding: 4px 10px;
+        padding: 6px 10px;
         background: rgba(255,255,255,0.12);
     }
 
     .logo-container img {
-        max-height: 100%;
-        max-width: 100%;
-        height: auto;
+        height: 36px;
+        width: auto;
         display: block;
-        object-fit: cover;
+        object-fit: contain;
     }
 
-    /* Nascondi il nome per risparmiare spazio verticale sul telefono */
+    /* Titolo sempre sotto il logo in formato più piccolo */
     .business-name {
-        display: none;
+        display: block;
+        font-size: 0.75em;
+        color: white;
+        font-weight: bold;
+        margin-top: 6px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
 }

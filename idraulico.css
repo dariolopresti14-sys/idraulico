@@ -704,3 +704,59 @@ body {
     }
 
 }
+
+/*tuttala parte responsive per cellulari*/
+
+/* ===== Mobile banner: all on one row + oval logo ===== */
+@media (max-width: 480px) {
+    .banner {
+        padding: 10px;
+    }
+
+    .banner-content {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .contact-btn {
+        flex: 0 0 48px;
+        height: 48px;
+        border-radius: 50%;
+        padding: 0;
+    }
+
+    .contact-btn img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .logo-container {
+        order: 0;
+        flex: 0 0 auto;
+        width: 140px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px; /* oval */
+        overflow: hidden;
+        padding: 4px 10px;
+        background: rgba(255,255,255,0.12);
+    }
+
+    .logo-container img {
+        max-height: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    /* Nascondi il nome per risparmiare spazio verticale sul telefono */
+    .business-name {
+        display: none;
+    }
+
+}

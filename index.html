@@ -7,6 +7,7 @@
     <meta name="keywords" content="idraulico Catania,Gaetano Cristaldi,pronto intervento idraulico Catania,ristrutturazione bagni Catania">
     <link rel="stylesheet" href="idraulico.css">
     <script src="idraulico.js" defer></script>
+    <script src="reviews.js" defer></script>
     <title>Termo Idraulica</title>
 </head>
 <body>
@@ -87,7 +88,7 @@
         </div>
 
         <p style="font-size: 1.1em; line-height: 1.8; text-align: justify; margin: 30px 0;">
-          TermoIdraulica di Cristaldi Gaetano:
+
           Esperienza e Precisione al tuo Servizio.
 
           Se cerchi un tecnico di fiducia a Giarre e dintorni, la ditta TermoIdraulica di Cristaldi Gaetano è la risposta alle tue esigenze.
@@ -177,16 +178,56 @@
 
     <!--Profilo dettagliato dell'idraulico con piccole animazioni delle mansioni dell'idraulico-->
 
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="modal-close" id="modalClose">×</button>
+          <div class="modal-reviewer" id="modalReviewer"></div>
+          <div class="modal-stars" id="modalStars"></div>
+          <div class="modal-date" id="modalDate"></div>
+        </div>
+        <div class="modal-body">
+          <p class="modal-review-text" id="modalReviewText"></p>
+        </div>
+        <div class="modal-footer">
+          <p style="color: #666; margin-bottom: 15px; font-size: 0.95em;">Ti è piaciuta questa recensione? Condividila!</p>
+          <div class="share-btn" onclick="shareReview('WhatsApp')">WhatApp</div>
+          <div class="share-btn facebook" onclick="shareReview('facebook')">Facebook</div>
+          <div class="share-btn instagram" onclick="shareReview('instagram')">Instagram</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--popup modale-->
+
     <section class="reviews-section">
       <h2 class="reviews-title">⭐ Cosa Dicono i Clienti</h2>
 
       <div class="rating-summary">
         <div class="overall-rating">4.9</div>
         <div class="stars">★★★★★</div>
-        <p style="font-size: 1.2em; color: #666;">Basato su 156 recensioni</p>
+        <p style="font-size: 1.2em; color: #666;">Basato su <span id="reviewCount">8</span> recensioni</p>
       </div>
 
-      <div id="reviewsContainer">
+      <div class="reviews-scroll-container">
+        <div class="reviews-wrapper" id="reviewsWrapper"></div>
+        <!--container scroll orizzontale dove le recensioni verranno caricate dinamicamente--> 
+        <div class="scroll-buttons">
+          <button class="scroll-btn" id="scrollLeft">← Precedenti</button>
+          <button class="scroll-btn" id="scrollRight">Successive →</button>
+         <!--bottoni di navigazione-->
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator">
+          Scorri per vedere altre recensioni
+        </div>
+       <!--indicatori posizione-->
+        <div class="scroll-dots" id="scrollDots"></div>
+        <!--pallini indicatori-->
+      </div>
+
+    <!--  <div id="reviewsContainer">
         <div class="review-card">
           <div class="review-header">
             <span class="reviewer-name">Maria S.</span>
@@ -226,7 +267,7 @@
 
         </div>
 
-      </div>
+      </div>-->
 
       <!--sezione di visuallizzazione delle card sulle recenzioni-->
 
